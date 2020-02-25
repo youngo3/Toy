@@ -1,0 +1,360 @@
+/* PC (해상도 1024px)*/
+@media all and (min-width: 1024px) {
+  body {
+    background-color: #e0e5ec;
+    font-family: 'Rubik', sans-serif;
+  }
+  #wrapper {
+    position: relative;
+    padding-top: 150px;
+  }
+  #countdown-view {
+    position: absolute;
+    margin-top: 300px;
+    left: 20%;
+    border-radius: 50px;
+    width: 60%;
+    height: 300px;
+    font-size: 180px;
+    font-weight: 900;
+    text-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+      -9px -9px 16px rgba(255, 255, 255, 0.884);
+    color: rgb(163, 177, 198, 0.6);
+    text-align: center;
+    z-index: -1;
+  }
+  #GIFs {
+    width: 800px;
+    height: 600px;
+    margin-left: 13%;
+  }
+  h1 {
+    content: 'How long will you sit on a chair?';
+    font-size: 100px;
+    font-weight: 900;
+    text-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+      -9px -9px 16px rgba(255, 255, 255, 0.884);
+    color: rgb(163, 177, 198, 0.6);
+    text-align: center;
+  }
+  .hour-button {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    border-radius: 50px;
+    margin: 50px 50px 0 50px;
+    padding: 15px;
+    justify-content: space-evenly;
+  }
+  .activate-button {
+    position: absolute;
+    top: 800px;
+    display: none;
+    grid-template-columns: repeat(2, 100px);
+    left: 30%;
+    grid-gap: 300px;
+  }
+  .start-button,
+  .reset-button {
+    /*https://uxplanet.org/neumorphism-in-user-interface-tutorial-c353698ac5c0*/
+    background-color: #e0e5ec;
+    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+      -9px -9px 16px rgba(255, 255, 255, 0.5);
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    font-weight: 900;
+    color: rgba(163, 177, 198, 0.836);
+    text-align: center;
+    border-radius: 50%;
+    margin: 50px;
+  }
+  .reset-button:active {
+    background-color: #4040f0;
+    color: white;
+  }
+  .lock {
+    border: dotted 15px pink;
+    z-index: -1;
+    /* Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */
+  }
+  .tmp {
+    display: none;
+    position: absolute;
+    left: 2%;
+  }
+  .hour-button input[type='radio'] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+  .hour-button label {
+    background-color: #e0e5ec;
+    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+      -9px -9px 16px rgba(255, 255, 255, 0.5);
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    font-weight: 900;
+    padding: 19px;
+    color: rgba(163, 177, 198, 0.836);
+    text-align: center;
+    border-radius: 50%;
+  }
+  .hour-button input[type='radio']:focus + label {
+    border-radius: 139px;
+    color: white;
+    background: #4040f0;
+    box-shadow: inset 6px 6px 7px #2d2daa, inset -6px -6px 7px #5353ff;
+    width: 100px;
+    height: 100px;
+  }
+  .pushButton {
+    border-radius: 139px;
+    color: white;
+    background: #4040f0;
+    box-shadow: inset 6px 6px 7px #2d2daa, inset -6px -6px 7px #5353ff;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    background-color: #e0e5ec;
+    font-family: 'Rubik', sans-serif;
+  }
+  #wrapper {
+    position: relative;
+    padding-top: 50px;
+  }
+  #countdown-view {
+    position: absolute;
+    padding-top: 300px;
+    left: 3%;
+    border-radius: 50px;
+    width: 60%;
+    height: 300px;
+    font-size: 140px;
+    font-weight: 900;
+    text-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+      -9px -9px 16px rgba(255, 255, 255, 0.884);
+    color: rgb(163, 177, 198, 0.6);
+    text-align: center;
+    z-index: -1;
+  }
+  #GIFs {
+    width: 600px;
+    height: 500px;
+    margin-left: 10%;
+  }
+  h1 {
+    content: 'How long will you sit on a chair?';
+    font-size: 70px;
+    font-weight: 900;
+    text-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+      -9px -9px 16px rgba(255, 255, 255, 0.884);
+    color: rgb(163, 177, 198, 0.6);
+    text-align: center;
+  }
+  .hour-button {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    border-radius: 50px;
+    margin: 50px 50px 0 50px;
+    padding: 15px;
+    justify-content: space-evenly;
+  }
+  .activate-button {
+    position: absolute;
+    top: 700px;
+    display: none;
+    grid-template-columns: repeat(2, 100px);
+    left: 20%;
+    grid-gap: 150px;
+  }
+
+  .start-button,
+  .reset-button {
+    /*https://uxplanet.org/neumorphism-in-user-interface-tutorial-c353698ac5c0*/
+    background-color: #e0e5ec;
+    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+      -9px -9px 16px rgba(255, 255, 255, 0.5);
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    font-weight: 900;
+    color: rgba(163, 177, 198, 0.836);
+    text-align: center;
+    border-radius: 50%;
+    margin: 50px;
+  }
+  .reset-button:active {
+    background-color: #4040f0;
+    color: white;
+  }
+  .lock {
+    border: solid pink;
+    z-index: -1;
+    /* Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */
+  }
+  .tmp {
+    display: none;
+    position: absolute;
+    left: 25px;
+    top: 270px;
+  }
+  .hour-button input[type='radio'] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+  .hour-button label {
+    background-color: #e0e5ec;
+    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+      -9px -9px 16px rgba(255, 255, 255, 0.5);
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    font-weight: 900;
+    padding: 19px;
+    color: rgba(163, 177, 198, 0.836);
+    text-align: center;
+    border-radius: 50%;
+  }
+  .hour-button input[type='radio']:focus + label {
+    border-radius: 139px;
+    color: white;
+    background: #4040f0;
+    box-shadow: inset 6px 6px 7px #2d2daa, inset -6px -6px 7px #5353ff;
+    width: 100px;
+    height: 100px;
+  }
+  .pushButton {
+    border-radius: 139px;
+    color: white;
+    background: #4040f0;
+    box-shadow: inset 6px 6px 7px #2d2daa, inset -6px -6px 7px #5353ff;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width: 767px) {
+  body {
+    background-color: #e0e5ec;
+    font-family: 'Rubik', sans-serif;
+  }
+  #wrapper {
+    position: relative;
+    padding: 30px 10px 30px 10px;
+  }
+  #countdown-view {
+    position: absolute;
+    left: 5%;
+    top: 95%;
+    margin: 0 auto;
+    padding-top: 50px;
+    border-radius: 50px;
+    width: 60%;
+    height: 150px;
+    font-size: 70px;
+    font-weight: 900;
+    text-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+      -9px -9px 16px rgba(255, 255, 255, 0.884);
+    color: rgb(163, 177, 198, 0.6);
+    text-align: center;
+  }
+  #GIFs {
+    width: 350px;
+    height: 300px;
+  }
+  h1 {
+    font-size: 35px;
+    font-weight: 900;
+    margin-right: 30px;
+    /* padding: 0 50px 50px 50px; */
+    line-height: normal;
+    text-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+      -9px -9px 16px rgba(255, 255, 255, 0.884);
+    color: rgb(163, 177, 198, 0.6);
+    text-align: center;
+  }
+  .hour-button {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    border-radius: 50px;
+    margin-top: 50px;
+    justify-content: space-evenly;
+  }
+  .activate-button {
+    position: absolute;
+    top: 400px;
+    display: none;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+  .start-button,
+  .reset-button {
+    /*https://uxplanet.org/neumorphism-in-user-interface-tutorial-c353698ac5c0*/
+    background-color: #e0e5ec;
+    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+      -9px -9px 16px rgba(255, 255, 255, 0.5);
+    width: 56px;
+    height: 56px;
+    font-size: 30px;
+    font-weight: 900;
+    color: rgba(163, 177, 198, 0.836);
+    text-align: center;
+    border-radius: 50%;
+    margin: 50px;
+  }
+  .reset-button:active {
+    background-color: #4040f0;
+    color: white;
+  }
+  .lock {
+    z-index: -1;
+  }
+  .tmp {
+    display: none;
+    position: absolute;
+    top: -100px;
+  }
+  .hour-button input[type='radio'] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+  .hour-button label {
+    background-color: #e0e5ec;
+    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
+      -9px -9px 16px rgba(255, 255, 255, 0.5);
+    width: 56px;
+    height: 56px;
+    font-size: 30px;
+    font-weight: 900;
+    padding-top: 10px;
+    color: rgba(163, 177, 198, 0.836);
+    text-align: center;
+    border-radius: 50%;
+  }
+  .hour-button input[type='radio']:focus + label {
+    border-radius: 139px;
+    color: white;
+    background: #4040f0;
+    box-shadow: inset 6px 6px 7px #2d2daa, inset -6px -6px 7px #5353ff;
+    width: 56px;
+    height: 56px;
+  }
+  .pushButton {
+    border-radius: 139px;
+    color: white;
+    background: #4040f0;
+    box-shadow: inset 6px 6px 7px #2d2daa, inset -6px -6px 7px #5353ff;
+    width: 56px;
+    height: 56px;
+  }
+}
