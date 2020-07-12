@@ -13,5 +13,5 @@ https://timerwithstretching.netlify.app/
 
 ## To be added or modified.
 - [x] ~~when button is focused, outline: 0;~~   
-- [ ] details about respoinsive web.(now, only available on desktop)   
+- [ ] details about responsive web.(now, only available on desktop)   
 - [x] ~~more animations. > add youtube instead of animation~~
