@@ -1,26 +1,17 @@
-const startBtn = document.querySelector('.start-button');
-const resetBtn = document.querySelector('.reset-button');
-const oneH = document.querySelector('#one-hour');
-const twoH = document.querySelector('#two-hour');
-const threeH = document.querySelector('#three-hour');
-const timerView = document.querySelector('#countdown-view');
-const hourBtn = document.querySelector('.hour-button');
-const activateBtn = document.querySelector('.activate-button');
-const lockBtn = document.querySelector('.tmp');
+const startButton = document.querySelector(".start-button");
+const resetButton = document.querySelector(".reset-button");
+const hour1 = document.querySelector("#one-hour");
+const hour2 = document.querySelector("#two-hour");
+const hour3 = document.querySelector("#three-hour");
+const countdownView = document.querySelector("#countdown-view");
+const hourButtonArea = document.querySelector(".hour-button-area");
+const activateButton = document.querySelector(".activate-button-area");
+const h1 = document.querySelector("h1");
 let isPause = false;
 let startTime;
 let timer;
+const times = [1000 * 60 * 60 * 1, 1000 * 60 * 60 * 2, 1000 * 60 * 60 * 3];
 
-const timeAbout = {
-  oneH: 1000 * 60 * 60 * 1,
-  twoH: 1000 * 60 * 60 * 2,
-  threeH: 1000 * 60 * 60 * 3
-};
-
-const GIFSource = {
-  eyes: './src/eyes.gif',
-  stretch: './src/stretch.gif'
-};
 function render(time) {
   let hours = Math.floor(time / 1000 / 60 / 60);
   let minutes = Math.floor((time / 1000 / 60) % 60);
@@ -28,25 +19,44 @@ function render(time) {
   hours = hours < 10 ? `0${hours}` : `${hours}`;
   minutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
   seconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
-  timerView.textContent = `${hours}:${minutes}:${seconds}`;
-  activateBtn.style.display = 'grid';
+  countdownView.textContent = `${hours}:${minutes}:${seconds}`;
+  countdownView.style.display = "grid";
+  activateButton.style.display = "grid";
 }
-
 function onHourButton() {
-  oneH.addEventListener('click', () => {
-    render(timeAbout.oneH);
-    startTime = timeAbout.oneH;
+  hour1.addEventListener("click", () => {
+    render(times[0]);
+    startTime = times[0];
+    h1.classList.add("move-text");
+    hourButtonArea.classList.add("move-button");
   });
-  twoH.addEventListener('click', () => {
-    render(timeAbout.twoH);
-    startTime = timeAbout.twoH;
+  hour2.addEventListener("click", () => {
+    render(times[1]);
+    startTime = times[1];
+    h1.classList.add("move-text");
+    hourButtonArea.classList.add("move-button");
   });
-  threeH.addEventListener('click', () => {
-    render(timeAbout.threeH);
-    startTime = timeAbout.threeH;
+  hour3.addEventListener("click", () => {
+    render(times[2]);
+    startTime = times[2];
+    h1.classList.add("move-text");
+    hourButtonArea.classList.add("move-button");
   });
 }
-
+function playVideo() {
+  const videoURL = "https://www.youtube.com/embed/wP5rGmrTyjg";
+  const startPoint = "start=9";
+  const autoplay = "amp;autoplay=1"; //&amp;mute=1
+  countdownView.innerHTML = `
+  <iframe
+    width="560"
+    height="315"
+    src="${videoURL}?${startPoint}&${autoplay}"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>`;
+}
 function startCountdown() {
   if (startTime > 0) {
     startTime = startTime - 1000;
@@ -54,66 +64,67 @@ function startCountdown() {
     return startTime;
   } else {
     clearInterval(timer);
-    startBtn.innerHTML = '▶';
+    startButton.innerHTML = "▶";
     clearInterval(timer);
-    startBtn.classList.remove('pushButton');
+    startButton.classList.remove("pushButton");
     isPause = false;
     unLock();
-    activateBtn.style.display = 'none';
-    timerView.textContent = '';
-    randomGIF();
+    activateButton.style.display = "none";
+    playVideo();
   }
 }
+
 function onLock() {
-  oneH.disabled = true;
-  twoH.disabled = true;
-  threeH.disabled = true;
-  lockBtn.style.display = 'inline-block';
-  hourBtn.classList.add('lock');
+  hour1.disabled = true;
+  hour2.disabled = true;
+  hour3.disabled = true;
+  const img = document.createElement("img");
+  img.src = "./src/assets/pink-line.png";
+  img.className = "lock";
+  img.style.position = "absolute";
+  img.style.top = "50%";
+  img.style.left = "-20%";
+  img.style.width = "120%";
+  img.style.height = "30%";
+  hourButtonArea.appendChild(img);
 }
 function unLock() {
-  oneH.disabled = false;
-  twoH.disabled = false;
-  threeH.disabled = false;
-  lockBtn.style.display = 'none';
-  hourBtn.classList.remove('lock');
+  hour1.disabled = false;
+  hour2.disabled = false;
+  hour3.disabled = false;
+  document.querySelector(".lock").remove();
 }
 
 function onStartButton() {
-  startBtn.addEventListener('click', () => {
+  startButton.addEventListener("click", () => {
     if (!isPause) {
-      startBtn.innerHTML = `&#10073&#10073`;
+      startButton.innerHTML = `&#10073&#10073`;
       timer = setInterval(startCountdown, 1000);
-      startBtn.classList.add('pushButton');
+      startButton.classList.add("pushButton");
       isPause = true;
       onLock();
     } else {
-      startBtn.innerHTML = '▶';
+      startButton.innerHTML = "▶";
       clearInterval(timer);
-      startBtn.classList.remove('pushButton');
+      startButton.classList.remove("pushButton");
       isPause = false;
       unLock();
     }
   });
 }
+
 function onResetButton() {
-  resetBtn.addEventListener('click', () => {
-    startBtn.innerHTML = '▶';
+  resetButton.addEventListener("click", () => {
+    startButton.innerHTML = "▶";
     clearInterval(timer);
-    startBtn.classList.remove('pushButton');
+    startButton.classList.remove("pushButton");
     isPause = false;
     unLock();
-    activateBtn.style.display = 'none';
-    timerView.textContent = '';
+    activateButton.style.display = "none";
+    countdownView.textContent = "";
+    h1.classList.remove("move-text");
+    hourButtonArea.classList.remove("move-button");
   });
-}
-function randomGIF() {
-  const gif = document.createElement('img');
-  const ObjValue = Object.values(GIFSource);
-  gif.src = ObjValue[Math.floor(ObjValue.length * Math.random())];
-  gif.id = 'GIFs';
-  timerView.appendChild(gif);
-  timerView.addEventListener('click', () => (timerView.innerHTML = ''));
 }
 
 function init() {
