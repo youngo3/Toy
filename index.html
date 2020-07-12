@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitting Too Long</title>
+    <title>Simple-Timer</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- https://favicon.io/emoji-favicons/alarm-clock/ -->
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./src/reset.css">
+    <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
-    <div id="wrapper">
-        <h1>How long will you sit on a chair?</h1>
-        <div id="countdown-view"></div> 
-        <div class="hour-button">
-            <div class="tmp"><img src="./src/lock.png" width="40px" alt=""><img></div>
-            <input type="radio" id="one-hour"><label for="one-hour">lh</label>
-            <input type="radio" id="two-hour"><label for="two-hour">2h</label>
-            <input type="radio" id="three-hour"><label for="three-hour">3h</label>
-        </div>
-        <div class="activate-button">
-            <button class="start-button">▶</button><button class="reset-button">&#8634</button>
-        </div>
+    <h1>How long will you sit on a chair?</h1>  
+    <div class="hour-button-area">
+        <input type="radio" id="one-hour"><label for="one-hour">lh</label>
+        <input type="radio" id="two-hour"><label for="two-hour">2h</label>
+        <input type="radio" id="three-hour"><label for="three-hour">3h</label>
     </div>
-    <script type= "text/javascript" src= "./src/main.js" ></script>.
+    <span id="countdown-view"></span> 
+    <div class="activate-button-area">
+        <button class="start-button">▶</button>
+        <button class="reset-button">&#8634</button>
+    </div>
+    <script type= "text/javascript" src="./src/main.js" ></script>
 </body>
 </html>
