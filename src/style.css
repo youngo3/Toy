@@ -4,7 +4,7 @@
     width: 100vw;
     color: black;
   }
-  body:after {
+  body:before {
     content: "Sorry, It's not support small screen, yet. Please use at the desktop🙏";
     font-size: 3rem;
     font-weight: 900;
@@ -12,8 +12,12 @@
   }
   h1,
   span,
-  div {
+  div,
+  #countdown-view,
+  .start-button,
+  .reset-button {
     display: none;
+    opacity: 0;
   }
 }
 @media all and (min-width: 768px) {
@@ -42,6 +46,7 @@
       -9px -9px 16px rgba(255, 255, 255, 0.884);
     color: rgb(163, 177, 198, 0.6);
     text-align: center;
+    border: 1px solid black;
   }
   .move-text {
     animation: move-text ease-out 1s both; /*reverse*/
@@ -49,8 +54,10 @@
   @keyframes move-text {
     to {
       top: 10%;
-      left: 20%;
-      font-size: 1rem;
+      left: 25%;
+      font-size: 2rem;
+      width: 35%;
+      text-align: center;
     }
   }
   .hour-button-area {
@@ -67,8 +74,8 @@
   }
   @keyframes move-button {
     to {
-      top: 10%;
-      left: 80%;
+      top: 15%;
+      left: 75%;
       scale: (0.9);
     }
   }
