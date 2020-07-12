@@ -10,6 +10,6 @@
 * Neumorphism design.     
 
 ## To be added or modified.
-- [x] when button is focused, outline: 0;   
+- [x] __when button is focused, outline: 0;__   
 - [ ] details about respoinsive web.(now, only available on desktop)   
-- [x] more animations. > add youtube instead of animation
+- [x] __more animations. > add youtube instead of animation__
