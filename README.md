@@ -1,5 +1,5 @@
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7a54a434-afc5-41a4-acce-7ea5684ebefc/deploy-status)](https://app.netlify.com/sites/timerwithstretching/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7a54a434-afc5-41a4-acce-7ea5684ebefc/deploy-status)](https://app.netlify.com/sites/timerwithstretching/deploys)   
 https://timerwithstretching.netlify.app/
 
 ## This is a simple timer.
