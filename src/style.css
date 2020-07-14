@@ -2,6 +2,7 @@
   body {
     background-color: rgb(163, 177, 198, 0.6);
     width: 100vw;
+    height: 100vh;
     color: black;
   }
   body:before {
@@ -11,11 +12,12 @@
     font-family: "Rubik", sans-serif;
   }
   h1,
-  span,
-  div,
+  .move-text,
+  .hour-button-area,
   #countdown-view,
-  .start-button,
-  .reset-button {
+  .activate-button-area,
+  .modal-overay,
+  iframe {
     display: none;
     opacity: 0;
   }
@@ -46,7 +48,6 @@
       -9px -9px 16px rgba(255, 255, 255, 0.884);
     color: rgb(163, 177, 198, 0.6);
     text-align: center;
-    border: 1px solid black;
   }
   .move-text {
     animation: move-text ease-out 1s both; /*reverse*/
@@ -132,5 +133,32 @@
     color: white;
     background: #b0b0b0;
     box-shadow: inset 8px 8px 16px #9b9b9b, inset -8px -8px 16px #c5c5c5;
+  }
+  .modal-overlay {
+    z-index: 200;
+    position: fixed;
+    background-color: black;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  iframe {
+    display: block;
+    z-index: 300;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+  }
+  .close-button {
+    width: 100px;
+    color: white;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

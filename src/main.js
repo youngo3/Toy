@@ -1,3 +1,4 @@
+import { loadPlayer } from "./loadVideo.js";
 const startButton = document.querySelector(".start-button");
 const resetButton = document.querySelector(".reset-button");
 const hour1 = document.querySelector("#one-hour");
@@ -10,6 +11,7 @@ const h1 = document.querySelector("h1");
 let isPause = false;
 let startTime;
 let timer;
+
 const times = [1000 * 60 * 60 * 1, 1000 * 60 * 60 * 2, 1000 * 60 * 60 * 3];
 
 function render(time) {
@@ -43,20 +45,6 @@ function onHourButton() {
     hourButtonArea.classList.add("move-button");
   });
 }
-function playVideo() {
-  const videoURL = "https://www.youtube.com/embed/wP5rGmrTyjg";
-  const startPoint = "start=9";
-  const autoplay = "amp;autoplay=1"; //&amp;mute=1
-  countdownView.innerHTML = `
-  <iframe
-    width="560"
-    height="315"
-    src="${videoURL}?${startPoint}&${autoplay}"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>`;
-}
 function startCountdown() {
   if (startTime > 0) {
     startTime = startTime - 1000;
@@ -70,10 +58,10 @@ function startCountdown() {
     isPause = false;
     unLock();
     activateButton.style.display = "none";
-    playVideo();
+    loadPlayer();
+    document.querySelector(".modal-overlay").style.display = "block";
   }
 }
-
 function onLock() {
   hour1.disabled = true;
   hour2.disabled = true;
@@ -94,7 +82,6 @@ function unLock() {
   hour3.disabled = false;
   document.querySelector(".lock").remove();
 }
-
 function onStartButton() {
   startButton.addEventListener("click", () => {
     if (!isPause) {
@@ -112,7 +99,6 @@ function onStartButton() {
     }
   });
 }
-
 function onResetButton() {
   resetButton.addEventListener("click", () => {
     startButton.innerHTML = "▶";
@@ -126,11 +112,9 @@ function onResetButton() {
     hourButtonArea.classList.remove("move-button");
   });
 }
-
 function init() {
   onHourButton();
   onStartButton();
   onResetButton();
 }
-
 init();
